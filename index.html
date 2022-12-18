@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 </head>
 <body>
-<img id="map" width="2048" height="1159" src= "assets/world_map.jpeg"  alt="treasure hunt" />
+<img id="map" width="2048" height="1159" src= "images/world_map.jpeg"  alt="treasure hunt" />
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
     // Calculate distance between click event and target a
@@ -70,7 +70,7 @@
         // Convert distance to a hint ➎
         // If the click was close enough, tell them they won ➐
         if (distance < 24) {
-            map.setAttribute("src", "assets/location.jpeg");
+            map.setAttribute("src", "images/location.jpeg");
             map.setAttribute("width", "564");
             map.setAttribute("height", "846");
             map.setAttribute("class", "ui image");
