@@ -9,6 +9,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 </head>
 <body>
+<div id="card" style="height: 300px; width: 400px; display: none">
+    <div class="ui card fluid">
+        <div class="image">
+            <img src="/images/location.jpeg">
+        </div>
+        <div class="content">
+            <a class="header">Zanzibar</a>
+            <div class="meta">
+                <span class="date">Heaven on earth</span>
+            </div>
+            <div class="description">
+                E sad na ono drugo <i class="smile icon"></i> <br/>
+                Naravno da bde avantura i očekuj skroz drugi svijet.
+                Tražio sam ipak nešto što možemo podnijeti.<br/>
+                Ne očekuj savršenstvo, potrudio sam se, ali uvijek ima nepredvidljivih stvari. <br/>
+                Veseli se avanturi i iskustvu, jer osim što je to naravno Afrika, vrućina, prodaje se, cjenka se, loša infrastruktura, komarci, ... <br/>
+                S druge strane ako promijeniš perspektvu, a opet si spreman na poteškoće koje su normalne u avanturi, ovo je zbilja raj na zemlji. <br/>
+                Bijeli pjesak, plavo more, morski plodovi, tropsko voće, kupanje u zimi, vremenska zona je samo +2h od nas...
+            </div>
+        </div>
+        <div class="extra content">
+            <a>
+                <i class="anchor icon"></i>
+                Imam čak i popis što ponijeti no worries <i class="child icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
 <img id="map" width="2048" height="1159" src= "images/world_map.jpeg"  alt="treasure hunt" />
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
@@ -63,6 +91,7 @@
     };
     // Add a click handler to the img element ➌
     map = document.getElementById('map');
+    card = document.getElementById('card');
     map.addEventListener('click', function(event) {
         clicks++;
         // Get distance between click event and target ➍
@@ -70,17 +99,15 @@
         // Convert distance to a hint ➎
         // If the click was close enough, tell them they won ➐
         if (distance < 24) {
-            map.setAttribute("src", "images/location.jpeg");
-            map.setAttribute("width", "564");
-            map.setAttribute("height", "846");
-            map.setAttribute("class", "ui image");
+            map.style.display = "none";
+            card.style.display = "block";
             Toastify({
                 text: "Bravoooooooooooo, idemo u Zanzibar!!!!!!!!!! Jeaaaaaaaaaaa!!!!! Sretan Božić :)",
                 duration: 10000,
                 newWindow: false,
                 close: false,
-                gravity: "bottom", // `top` or `bottom`
-                position: "left", // `left`, `center` or `right`
+                gravity: "top", // `top` or `bottom`
+                position: "center", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
