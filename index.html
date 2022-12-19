@@ -9,32 +9,44 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 </head>
 <body>
-<div id="card" style="height: 300px; width: 400px; display: none">
-    <div class="ui card fluid">
-        <div class="image">
-            <img src="/images/location.jpeg">
-        </div>
-        <div class="content">
-            <a class="header">Zanzibar</a>
-            <div class="meta">
-                <span class="date">Heaven on earth</span>
+<div class="ui grid" id="card" style="display: none">
+    <div class="four wide column">
+        <div class="ui card fluid">
+            <div class="image">
+                <img src="/images/location.jpeg" />
             </div>
-            <div class="description">
-                E sad na ono drugo <i class="smile icon"></i> <br/>
-                Naravno da bde avantura i očekuj skroz drugi svijet.
-                Tražio sam ipak nešto što možemo podnijeti.<br/>
-                Ne očekuj savršenstvo, potrudio sam se, ali uvijek ima nepredvidljivih stvari. <br/>
-                Veseli se avanturi i iskustvu, jer osim što je to naravno Afrika, vrućina, prodaje se, cjenka se, loša infrastruktura, komarci, ... <br/>
-                S druge strane ako promijeniš perspektvu, a opet si spreman na poteškoće koje su normalne u avanturi, ovo je zbilja raj na zemlji. <br/>
-                Bijeli pjesak, plavo more, morski plodovi, tropsko voće, kupanje u zimi, vremenska zona je samo +2h od nas...
+            <div class="content">
+                <a class="header">Zanzibar</a>
+                <div class="meta">
+                    <span class="date">Heaven on earth</span>
+                </div>
+                <div class="description">
+                    E sad na ono drugo <i class="smile icon"></i> <br/>
+                    Naravno da bde avantura i očekuj skroz drugi svijet.
+                    Tražio sam ipak nešto što možemo podnijeti.<br/>
+                    Ne očekuj savršenstvo, potrudio sam se, ali uvijek ima nepredvidljivih stvari. <br/>
+                    Veseli se avanturi i iskustvu, jer osim što je to naravno Afrika, vrućina, prodaje se, cjenka se, loša infrastruktura, komarci, ... <br/>
+                    S druge strane ako promijeniš perspektvu, a opet si spreman na poteškoće koje su normalne u avanturi, ovo je zbilja raj na zemlji. <br/>
+                    Bijeli pjesak, plavo more, morski plodovi, tropsko voće, kupanje u zimi, vremenska zona je samo +2h od nas...
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="anchor icon"></i>
+                    Imam čak i popis što ponijeti no worries <i class="child icon"></i>
+                </a>
             </div>
         </div>
-        <div class="extra content">
-            <a>
-                <i class="anchor icon"></i>
-                Imam čak i popis što ponijeti no worries <i class="child icon"></i>
-            </a>
-        </div>
+    </div>
+    <div class="eight wide column">
+        <iframe
+                width="560" height="315"
+                src="https://www.youtube.com/embed/PEmKG_ZBNlc"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+
+        </iframe>
     </div>
 </div>
 <img id="map" width="2048" height="1159" src= "images/world_map.jpeg"  alt="treasure hunt" />
@@ -107,7 +119,7 @@
                 newWindow: false,
                 close: false,
                 gravity: "top", // `top` or `bottom`
-                position: "center", // `left`, `center` or `right`
+                position: "right", // `left`, `center` or `right`
                 stopOnFocus: true, // Prevents dismissing of toast on hover
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
