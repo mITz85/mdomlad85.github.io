@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Christmas Treasure Hunt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        /* Add some basic animations for transitions */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.5s ease-in-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+
+</head>
+<body class="bg-gradient-to-r from-red-400 to-green-400">
+
+<div id="app" class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold text-white text-center mb-4">Christmas Treasure Hunt!</h1>
+
+    <div v-show="currentLevel === 0" class="fade-in">
+        <p class="text-white text-center mb-4">Click below to begin your adventure!</p>
+        <button @click="currentLevel = 1" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">Start the Hunt!</button>
+    </div>
+
+    <div v-show="currentLevel === 1" class="fade-in">
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 1: Unwrapping Presents</h2>
+        <p class="text-white text-center mb-4">Solve the riddle to find the correct present:</p>
+        <p class="text-white text-center mb-4">I'm wrapped in paper, bright and bold,<br>A Christmas secret I hold.<br>Choose wisely, the right one's key,<br>To unlock the next mystery.</p>
+
+        <div class="container mx-auto">
+            <div class="flex justify-center space-x-4">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 1" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 2" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 3" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 4" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 1" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 1" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 1" class="w-full h-auto">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/300" alt="Image 1" class="w-full h-auto">
+                </div>
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+        <!--
+        <div class="flex justify-center space-x-4">
+            <img src="./images/present_1.jpg" alt="Present 1" @click="checkPresent(1)" class="w-40 h-40 cursor-pointer transform hover:scale-105 transition-transform duration-300">
+            <img src="./images/present_2.jpg" alt="Present 2" @click="checkPresent(2)" class="w-40 h-40 cursor-pointer transform hover:scale-105 transition-transform duration-300">
+            <img src="./images/present_3.jpg" alt="Present 3" @click="checkPresent(3)" class="w-40 h-40 cursor-pointer transform hover:scale-105 transition-transform duration-300">
+        </div>
+        -->
+        <div id="level1Feedback" class="text-white text-center mt-4">{{ level1Feedback }}</div>
+    </div>
+
+    <div v-show="currentLevel === 2" class="fade-in">
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 2: Invisible Ink</h2>
+        <p class="text-white text-center mb-4">A message hidden, can you see?<br>The answer's bright, for all to be.<br>Type the word, don't delay,<br>To the next clue, light the way.</p>
+        <img src="./images/envelope.jpeg" alt="Envelope" class="w-64 h-64 mx-auto mb-4">
+        <input type="text" v-model="level2Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <button @click="checkAnswerLevel2" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
+        <div id="level2Feedback" class="text-white text-center mt-4">{{ level2Feedback }}</div>
+    </div>
+
+    <div v-show="currentLevel === 3" class="fade-in">
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 3: Describing Lapland</h2>
+        <p class="text-white text-center mb-4">I'm a land of snow and ice,<br>Where Santa's home, a magical price.<br>Reindeer fly, and lights dance bright,<br>What's my name, in the winter night?</p>
+        <img src="./images/lapland.jpg" alt="Lapland Collage" class="w-96 h-64 mx-auto mb-4">
+        <input type="text" v-model="level3Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <button @click="checkAnswerLevel3" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
+        <div id="level3Feedback" class="text-white text-center mt-4">{{ level3Feedback }}</div>
+    </div>
+
+    <div v-show="currentLevel === 4" class="fade-in">
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 4: Finding Santa</h2>
+        <p class="text-white text-center mb-4">Find Santa's workshop on the map!</p>
+        <img src="./images/worldmap.jpg" alt="Map" usemap="#worldmap" class="w-full h-auto mx-auto mb-4">
+        <map name="worldmap">
+            <area shape="rect" coords="300,100,400,200" href="#" alt="Location 1" @click.prevent="checkLocation('Location 1')">
+            <area shape="rect" coords="500,200,600,300" href="#" alt="Rovaniemi" @click.prevent="checkLocation('Rovaniemi')">
+            <area shape="rect" coords="700,300,800,400" href="#" alt="Location 3" @click.prevent="checkLocation('Location 3')">
+        </map>
+        <div id="level4Feedback" class="text-white text-center mt-4">{{ level4Feedback }}</div>
+        <div id="treasure" v-show="treasureFound" class="text-4xl font-bold text-yellow-400 text-center mt-8 slide-in-right">
+            🎉 You found Santa! Congratulations! 🎉
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            currentLevel: 0,
+            level1Feedback: "",
+            level2Answer: "",
+            level2Feedback: "",
+            level3Answer: "",
+            level3Feedback: "",
+            level4Feedback: "",
+            treasureFound: false
+        },
+        methods: {
+            checkPresent(presentNumber) {
+                const correctPresent = 1; // Change to the actual correct present
+                if (presentNumber === correctPresent) {
+                    this.level1Feedback = "Correct! You unwrapped the right present!";
+                    setTimeout(() => {
+                        this.currentLevel = 2;
+                        this.level1Feedback = "";
+                    }, 1500);
+                } else {
+                    this.level1Feedback = "Incorrect! Try again.";
+                }
+            },
+            checkAnswerLevel2() {
+                if (this.level2Answer.toLowerCase() === "shine") {
+                    this.level2Feedback = "Correct! The message is revealed!";
+                    setTimeout(() => {
+                        this.currentLevel = 3;
+                        this.level2Feedback = "";
+                        this.level2Answer = "";
+                    }, 1500);
+                } else {
+                    this.level2Feedback = "Incorrect! Try again.";
+                }
+            },
+            checkAnswerLevel3() {
+                if (this.level3Answer.toLowerCase() === "lapland") {
+                    this.level3Feedback = "Correct! You've found the location!";
+                    setTimeout(() => {
+                        this.currentLevel = 4;
+                        this.level3Feedback = "";
+                        this.level3Answer = "";
+                    }, 1500);
+                } else {
+                    this.level3Feedback = "Incorrect! Try again.";
+                }
+            },
+            checkLocation(location) {
+                if (location === "Rovaniemi") {
+                    this.level4Feedback = "Correct! You found Santa's workshop!";
+                    setTimeout(() => {
+                        this.treasureFound = true;
+                    }, 1500);
+                } else {
+                    this.level4Feedback = "Incorrect! Try again.";
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
