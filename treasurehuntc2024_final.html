@@ -31,18 +31,18 @@
 <div id="app" class="container mx-auto p-8">
 
     <div v-show="currentLevel === 5" class="fade-in">
-        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 5: Unwrapping Presents #2</h2>
-        <p class="text-white text-center mb-4">Holiday Hunt: A Festive Challenge</p>
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 5: The Journey Begins</h2>
+        <p class="text-white text-center mb-4">Pathways to Adventure</p>
         <p class="text-white text-center mb-4">
-            In this season of joy, five treasures appear, <br>
-            Each holds a secret that brings winter cheer.<br>
-            Warm your fingers in the cold's tight embrace,<br>
-            A cap for the chill, snug in its place.<br>
+            Two gifts await, with secrets to share,<br>
+            Guiding you forth on paths rare.<br>
+            One streams melodies as you wander along,<br>
+            The other carries essentials where you belong.<br>
             <br>
-            Rainy days greet you, but you're ready with ease,<br>
-            As music surrounds, creating warm memories.<br>
-            What's the one word, blanketing all you know?<br>
-            Unwrap these gifts and think of the ...
+            Think of the journeys that take you afar,<br>
+            With thoughts of new places beneath every star.<br>
+            What single word unites these gifts so tight?<br>
+            Dream of faraway places and the wondrous ______.<br>
         </p>
 
         <div class="container mx-auto">
@@ -64,65 +64,73 @@
         </div>
         -->
         <div class="container mx-auto">
-            <input type="text" v-model="level1Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            <button @click="checkAnswerLevel1" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
-            <div id="level1Feedback" class="text-white text-center mt-4">{{ level1Feedback }}</div>
+            <input type="text" v-model="level5Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <button @click="checkAnswerLevel5" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
+            <div id="level1Feedback" class="text-white text-center mt-4">{{ level5Feedback }}</div>
         </div>
     </div>
 
-    <div v-show="currentLevel === 2" class="fade-in">
-        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 2: Hidden Delights</h2>
+    <div v-show="currentLevel === 6" class="fade-in">
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 6: A Hidden Adventure Awaits</h2>
         <p class="text-white text-center mb-4">
-            A message hidden, can you see?<br>
-            The answer's bright, for all to be.<br>
-            Type the word, don't delay,<br>
-            To the next clue, light the way.</p>
+            Beneath the tree, where magic unfolds,<br>
+            Seven surprises wrapped in stories untold.<br>
+            Each little paper, a secret to find,<br>
+            A letter to gather, a treasure combined.<br>
+            <br>
+            With invisible ink, the letters do hide,<br>
+            Follow the clues with joy and with pride.<br>
+            Piece them together, and soon you'll see,<br>
+            The name of a place that’s cozy as can be.<br>
+            <br>
+            A land of wonder where snowflakes fall,<br>
+            Unravel the mystery, the answer is call.<br>
+            So search high and low, let your heart expand,<br>
+            Discover the magic of this snowy ______.<br>
+        </p>
         <img src="./images/envelope.png" alt="Envelope" class="w-64 h-64 mx-auto mb-4">
-        <input type="text" v-model="level2Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        <button @click="checkAnswerLevel2" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
-        <div id="level2Feedback" class="text-white text-center mt-4">{{ level2Feedback }}</div>
-    </div>
-
-    <div v-show="currentLevel === 3" class="fade-in">
-        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 3: Jolly Mysteries</h2>
-        <p class="text-white text-center mb-4">
-            In the night sky, a sleigh takes flight,<br>
-            Led by reindeer, a wondrous sight.<br>
-            With laughter and joy, he travels afar,<br>
-            Delivering gifts under each shining star.<br>
-            <br>
-            Red suit and white beard, cheerful and grand,<br>
-            A beloved figure in every land.<br>
-            He checks his list, not once but twice,<br>
-            Who is this jolly bringer of holiday spice?<br>
-            <br>
-            Think of the name, the legend so grand,<br>
-            Type the answer to lend us a hand.<br>
-            <img src="./images/santa_colllage_1.jpeg" alt="Santa Collage" class="w-96 h-64 mx-auto mb-4">
-            <input type="text" v-model="level3Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            <button @click="checkAnswerLevel3" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
-        <div id="level3Feedback" class="text-white text-center mt-4">{{ level3Feedback }}</div>
+        <input type="text" v-model="level6Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <button @click="checkAnswerLevel6" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
+        <div id="level6Feedback" class="text-white text-center mt-4">{{ level6Feedback }}</div>
     </div>
 
     <div v-show="currentLevel === 'finish'" class="fade-in">
-        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 4: The Part 1 Ultimate Clue</h2>
-        <p class="text-white text-center mb-4">The Final Countdown</p>
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Congratulations, Adventurer!</h2>
         <p class="text-white text-center mb-4">
-            You've journeyed through winter, sweet places explored,<br>
-            Guided by the magic of tales long adored.<br>
-            Now the next piece is hidden from sight,<br>
-            To reveal the surprise and end the night.<br>
+            You've journeyed through riddles, puzzles, and clues,<br>
+            Unlocking the secrets that were hidden from view.<br>
+            From the magic of <b>snow</b> to the joys of the <b>candy shop</b>,<br>
+            You have discovered treasures that never will stop.<br>
             <br>
-            Winter's travels led to sugary bliss,
-            With gifts of enchantment you must not miss.<br>
-            Combine these clues, let your curiosity drop,<br>
-            Where do you search, to make the mystery stop?<br>
+            With the laughter of <b>Santa</b> and the spirit of <b>travel</b> in tow,<br>
+            You've pieced together the wonders that glow!<br>
+            Now, gather your thoughts and let your heart expand,<br>
+            For all roads lead to a captivating land.<br>
             <br>
-            The jolly old man, combined with treats,<br>
-            Holds in his shop, a final feat.<br>
-            To uncover the truth and find what you seek,<br>
-            Look under Santa's place with candy so sweet.<br>
+            When you combine the clues you've bravely explored,<br>
+            It reveals the journey that you've all adored.<br>
+            Pack your bags, for the adventure to <b>Rovaniemi</b> awaits,<br>
+            Where the magic of Christmas and joy truly resonates.<br>
+            <br>
+            Get ready to meet Santa, in his wintery retreat,<br>
+            In a land full of wonder, where dreams become sweet.<br>
+            The journey is yours, and the magic is real,<br>
+            Embrace the excitement—it's the ultimate thrill!<br>
         </p>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="container mx-auto">
+            <div class="flex justify-center space-x-4">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="./images/flight.png" alt="Image 1" class="w-auto h-auto">
+                </div>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <a class="text-white text-center mb-4" href="https://www.portablenorthpole.com/player?token=6x1jcaa5gex2p-7577383730307362"target="_blank">View short video for the end</a>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -140,8 +148,8 @@
         methods: {
             checkAnswerLevel5() {
                 let curr = this.level5Answer.toLowerCase();
-                if (curr.includes("snow")) {
-                    this.level1Feedback = "Well done! You've uncovered the level 1 solution!";
+                if (curr.includes("flight") || curr.includes("travel")) {
+                    this.level5Feedback = "Fantastic! You've pieced together the final word. Let's move to the magical land of wonder!";
                     setTimeout(() => {
                         this.currentLevel = 6;
                         this.level5Feedback = "";
@@ -153,15 +161,15 @@
             },
             checkAnswerLevel6() {
                 let curr = this.level6Answer.toLowerCase();
-                if (curr === "candy shop") {
-                    this.level6Feedback = "Great job! You've discovered the sweet haven. On to the next adventure!";
+                if (curr === "lapland") {
+                    this.level6Feedback = "Great job! You've solved all the mysteries, you are a real detective. <br> For that prepare to embark on the next adventure!";
                     setTimeout(() => {
                         this.currentLevel = "finish";
                         this.level6Feedback = "";
                         this.level6Answer = "";
-                    }, 2500);
+                    }, 3500);
                 } else {
-                    this.level6Feedback = "Oops! That’s not quite right. Try again and think of where sugary treasures are found!";
+                    this.level6Feedback = "Not quite! Keep searching. The letters are hidden beneath the tree. <br>Look closely at the papers and see what they reveal!";
                 }
             }
         }
