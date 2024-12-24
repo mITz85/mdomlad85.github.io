@@ -40,27 +40,27 @@
         <h2 class="text-2xl font-bold text-white text-center mb-4">Level 1: Unwrapping Presents</h2>
         <p class="text-white text-center mb-4">Holiday Hunt: A Festive Challenge</p>
         <p class="text-white text-center mb-4">
-            In this season of joy, five treasures await, <br>
-            Each one holds secrets to a wonderful fate.<br>
-            One keeps your fingers warm in cold's tight embrace,<br>
-            A cap for your head, to shield from the space.<br>
+            In this season of joy, five treasures appear, <br>
+            Each holds a secret that brings winter cheer.<br>
+            Warm your fingers in the cold's tight embrace,<br>
+            A cap for the chill, snug in its place.<br>
             <br>
-            Rainy days come, but you'll stay dry with ease,<br>
-            While tunes dance and play, bringing moments to please.<br>
-            Two words combine, a tale to ignite,<br>
-            What are these gifts that prepare you for flight?
+            Rainy days greet you, but you're ready with ease,<br>
+            As music surrounds, creating warm memories.<br>
+            What's the one word, blanketing all you know?<br>
+            Unwrap these gifts and think of the ...
         </p>
 
         <div class="container mx-auto">
             <div class="flex justify-center space-x-4">
                 <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="./images/present_1.jpg" alt="Image 1" class="w-auto h-auto">
+                    <img src="./images/present_1.png" alt="Image 1" class="w-auto h-auto">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="./images/present_2.jpg" alt="Image 2" class="w-auto h-auto">
+                    <img src="./images/present_2.png" alt="Image 2" class="w-auto h-auto">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow-lg">
-                    <img src="./images/present_3.jpg" alt="Image 3" class="w-auto h-auto">
+                    <img src="./images/present_3.png" alt="Image 3" class="w-auto h-auto">
                 </div>
                 <!-- Add more images as needed -->
             </div>
@@ -86,7 +86,7 @@
             The answer's bright, for all to be.<br>
             Type the word, don't delay,<br>
             To the next clue, light the way.</p>
-        <img src="./images/envelope.jpeg" alt="Envelope" class="w-64 h-64 mx-auto mb-4">
+        <img src="./images/envelope.png" alt="Envelope" class="w-64 h-64 mx-auto mb-4">
         <input type="text" v-model="level2Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         <button @click="checkAnswerLevel2" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
         <div id="level2Feedback" class="text-white text-center mt-4">{{ level2Feedback }}</div>
@@ -107,19 +107,19 @@
             <br>
             Think of the name, the legend so grand,<br>
             Type the answer to lend us a hand.<br>
-            <img src="./images/lapland.jpg" alt="Lapland Collage" class="w-96 h-64 mx-auto mb-4">
+            <img src="./images/santa_colllage_1.jpeg" alt="Santa Collage" class="w-96 h-64 mx-auto mb-4">
         <input type="text" v-model="level3Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         <button @click="checkAnswerLevel3" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
         <div id="level3Feedback" class="text-white text-center mt-4">{{ level3Feedback }}</div>
     </div>
 
     <div v-show="currentLevel === 4" class="fade-in">
-        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 4: The Ultimate Clue</h2>
+        <h2 class="text-2xl font-bold text-white text-center mb-4">Level 4: The Part 1 Ultimate Clue</h2>
         <p class="text-white text-center mb-4">The Final Countdown</p>
         <p class="text-white text-center mb-4">
             You've journeyed through winter, sweet places explored,<br>
             Guided by the magic of tales long adored.<br>
-            Now the final piece is hidden from sight,<br>
+            Now the next piece is hidden from sight,<br>
             To reveal the surprise and end the night.<br>
             <br>
             Winter's travels led to sugary bliss,
@@ -151,13 +151,13 @@
         methods: {
             checkAnswerLevel1() {
                 let curr = this.level1Answer.toLowerCase();
-                if (curr.includes("winter")) {
+                if (curr.includes("snow")) {
                     this.level1Feedback = "Well done! You've uncovered the level 1 solution!";
                     setTimeout(() => {
                         this.currentLevel = 2;
                         this.level1Feedback = "";
                         this.level1Answer = "";
-                    }, 1500);
+                    }, 2500);
                 } else {
                     this.level1Feedback = "Oops! This isn't quite right. Keep unwrapping those clues and try again!";
                 }
@@ -170,7 +170,7 @@
                         this.currentLevel = 3;
                         this.level2Feedback = "";
                         this.level2Answer = "";
-                    }, 1500);
+                    }, 2500);
                 } else {
                     this.level2Feedback = "Oops! That’s not quite right. Try again and think of where sugary treasures are found!";
                 }
@@ -183,7 +183,7 @@
                         this.currentLevel = 4;
                         this.level3Feedback = "";
                         this.level3Answer = "";
-                    }, 1500);
+                    }, 2500);
                 } else {
                     this.level3Feedback = "Not quite! Think of the jolly figure who brings cheer to all with his magical sleigh.";
                 }
