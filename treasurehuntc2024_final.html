@@ -81,14 +81,14 @@
             With invisible ink, the letters do hide,<br>
             Follow the clues with joy and with pride.<br>
             Piece them together, and soon you'll see,<br>
-            The name of a place that’s cozy as can be.<br>
+            The name of a place that's cozy as can be.<br>
             <br>
             A land of wonder where snowflakes fall,<br>
             Unravel the mystery, the answer is call.<br>
             So search high and low, let your heart expand,<br>
             Discover the magic of this snowy ______.<br>
         </p>
-        <img src="./images/envelope.png" alt="Envelope" class="w-64 h-64 mx-auto mb-4">
+        <img src="./images/bor_2024.jpeg" alt="Envelope" class="w-96 h-96 mx-auto mb-4">
         <input type="text" v-model="level6Answer" placeholder="Enter your answer" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         <button @click="checkAnswerLevel6" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Submit</button>
         <div id="level6Feedback" class="text-white text-center mt-4">{{ level6Feedback }}</div>
@@ -108,16 +108,16 @@
             For all roads lead to a captivating land.<br>
             <br>
             When you combine the clues you've bravely explored,<br>
-            It reveals the journey that you've all adored.<br>
+            It reveals the journey that you have all adored.<br>
             Pack your bags, for the adventure to <b>Rovaniemi</b> awaits,<br>
             Where the magic of Christmas and joy truly resonates.<br>
             <br>
             Get ready to meet Santa, in his wintery retreat,<br>
             In a land full of wonder, where dreams become sweet.<br>
             The journey is yours, and the magic is real,<br>
-            Embrace the excitement—it's the ultimate thrill!<br>
+            Embrace the excitement, it is the ultimate thrill!<br>
         </p>
-        <br><br><br><br><br><br><br><br><br><br>
+        <img src="./images/bor_2024.jpeg" alt="Envelope" class="w-96 h-96 mx-auto mb-4">
         <div class="container mx-auto">
             <div class="flex justify-center space-x-4">
                 <div class="overflow-hidden rounded-lg shadow-lg">
@@ -162,14 +162,14 @@
             checkAnswerLevel6() {
                 let curr = this.level6Answer.toLowerCase();
                 if (curr === "lapland") {
-                    this.level6Feedback = "Great job! You've solved all the mysteries, you are a real detective. <br> For that prepare to embark on the next adventure!";
+                    this.level6Feedback = "Great job! You've solved all the mysteries, you are a real detective. For that prepare to embark on the next adventure!";
                     setTimeout(() => {
                         this.currentLevel = "finish";
                         this.level6Feedback = "";
                         this.level6Answer = "";
                     }, 3500);
                 } else {
-                    this.level6Feedback = "Not quite! Keep searching. The letters are hidden beneath the tree. <br>Look closely at the papers and see what they reveal!";
+                    this.level6Feedback = "Not quite! Keep searching. The letters are hidden beneath the tree. Look closely at the papers and see what they reveal!";
                 }
             }
         }
