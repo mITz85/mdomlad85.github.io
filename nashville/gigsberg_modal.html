@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Event Tickets Marketplace - Gigsberg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gigsberg is a secondary ticket marketplace. All tickets are guaranteed and secure.">
+    <link rel="shortcut icon" href="https://gigsberg.uk/assets/front/images/favicon.ico">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
+        header, main { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 24px; }
+        .thankyou-title { font-size: 2em; font-weight: bold; margin-bottom: 0.2em; }
+        .thankyou-subtitle { font-size: 1.2em; margin-bottom: 0.5em; }
+        .thankyou-message { color: #666; margin-bottom: 1.5em; }
+        .purchase-title h3 { margin: 0.2em 0; }
+        .order-details, .date-location, .customer-details { display: flex; gap: 32px; margin-bottom: 1em; }
+        .order-details ul, .customer-details ul { list-style: none; padding: 0; margin: 0; }
+        .order_div_left { color: #888; }
+        .order_div_right { font-weight: bold; }
+        .separator { border: none; border-top: 1px solid #eee; margin: 1.5em 0; }
+        .thank-you-widgets-left, .thank-you-widgets-right { display: inline-block; vertical-align: top; }
+        .thank-you-widgets-left { width: 60%; }
+        .thank-you-widgets-right { width: 35%; text-align: right; }
+        .image-container img { max-width: 120px; border-radius: 8px; }
+        .date-location { gap: 48px; }
+        .date-section, .location-section { }
+        .label { font-size: 0.95em; color: #888; }
+        .value { font-weight: bold; }
+        .tysecurity { background: #f0f8ff; padding: 12px; border-radius: 6px; color: #04599c; margin-bottom: 1em; }
+        .thank-you-block { background: #f9f9f9; padding: 12px; border-radius: 6px; text-align: center; }
+        @media (max-width: 700px) {
+            header, main { padding: 12px; }
+            .order-details, .date-location, .customer-details { flex-direction: column; gap: 8px; }
+            .thank-you-widgets-left, .thank-you-widgets-right { display: block; width: 100%; text-align: left; }
+            .image-container img { max-width: 100px; }
+        }
+    </style>
+</head>
+<body>
+<header style="background: #d886ec; border-bottom: 1px solid #eee;">
+    <a href="https://gigsberg.uk/">
+        <img src="https://gigsberg.uk/assets/front/images/logo3.png" alt="Gigsberg home" style="height:40px;">
+    </a>
+    <div style="margin-top:10px; color:#04599c; font-size:0.95em;">
+        Gigsberg is a secondary ticket marketplace. All tickets are guaranteed and secure. Prices are set by sellers and may be above or below face value.
+    </div>
+</header>
+<main>
+    <section>
+        <div class="thankyou-title">Thank you.</div>
+        <div class="thankyou-subtitle">Your ticket purchase is now being processed.</div>
+        <div class="thankyou-message">We’ll get back to you soon.</div>
+        <div class="thank-you-widgets-left">
+            <div class="purchase-title">
+                <h3>Purchase details for:</h3>
+                <h3>Suki Waterhouse</h3>
+            </div>
+            <div class="order-details">
+                <ul class="order_div_left">
+                    <li>Order ID</li>
+                    <li>Ticket Type</li>
+                    <li>Category</li>
+                </ul>
+                <ul class="order_div_right">
+                    <li>#4792869</li>
+                    <li>Mobile Ticket</li>
+                    <li>Stalls</li>
+                </ul>
+            </div>
+        </div>
+        <div class="thank-you-widgets-right">
+            <div class="image-container">
+                <img src="https://gigsberg.uk/assets/front/images/socialpreview.jpg" alt="Suki Waterhouse">
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="date-location">
+            <div class="date-section">
+                <div class="label">Date</div>
+                <div class="value">Monday, 25 August, 2025</div>
+            </div>
+            <div class="location-section">
+                <div class="label">Location</div>
+                <div class="value">O2 Forum Kentish Town, London, United Kingdom</div>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="customer-details">
+            <div>
+                <h3 class="customer-details-title">Customer details</h3>
+                <ul>
+                    <li>Kevin Kirk</li>
+                    <li>+46-708191303</li>
+                    <li>kevin.kirk@d1techs.com</li>
+                    <li>Storagatan 38</li>
+                    <li>Vastaros, Sweden</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="tysecurity">
+            To keep our marketplace safe for everybody, Gigsberg is reviewing this order and will notify you as soon as your ticket is available for download.
+        </div>
+        <div class="thank-you-block">
+            <p>Find a place to stay near O2 Forum Kentish Town</p>
+            <button id="widget-button" style="color:#fff; background:#04599c; padding:8px 18px; border-radius:4px; text-decoration:none; visibility: hidden;">Search Hotels</button>
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="https://widget-test.travelone.ai/init.latest.js"></script>
+<script>
+    setTimeout(initWidget, 2000);
+    function initWidget() {
+        Dest1PhoenixWidget.configureWidget({
+            hostId: '61a8c0b0-3b7a-45c9-8ae8-9985075a6aa5',
+            buttonId: "widget-button",
+            customerInfo: {
+                destination: 'O2 Forum Kentish Town, London, United Kingdom',
+                name: 'John Doe',
+                travelers: '1 adult',
+                eventDate: 'Monday, 25 August, 2025',
+                eventType: 'event',
+                language: 'en',
+                currency: 'GBP',
+            }
+        });
+    }
+</script>
+</body>
+</html>

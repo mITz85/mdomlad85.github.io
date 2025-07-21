@@ -7,8 +7,25 @@
     <meta name="description" content="Gigsberg is a secondary ticket marketplace. All tickets are guaranteed and secure.">
     <link rel="shortcut icon" href="https://gigsberg.uk/assets/front/images/favicon.ico">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
-        header, main { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 24px; }
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #222;
+            height: auto;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        header, main {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #0001;
+            padding: 24px;
+        }
         .thankyou-title { font-size: 2em; font-weight: bold; margin-bottom: 0.2em; }
         .thankyou-subtitle { font-size: 1.2em; margin-bottom: 0.5em; }
         .thankyou-message { color: #666; margin-bottom: 1.5em; }
@@ -27,29 +44,34 @@
         .label { font-size: 0.95em; color: #888; }
         .value { font-weight: bold; }
         .tysecurity { background: #f0f8ff; padding: 12px; border-radius: 6px; color: #04599c; margin-bottom: 1em; }
-        .thank-you-block { background: #f9f9f9; padding: 12px; border-radius: 6px; text-align: center; }
+        .thank-you-block {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #widget-parent {
+            height: 900px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+        }
         @media (max-width: 700px) {
-            header, main { padding: 12px; }
+            header, main { padding: 12px; margin: 15px auto; }
             .order-details, .date-location, .customer-details { flex-direction: column; gap: 8px; }
             .thank-you-widgets-left, .thank-you-widgets-right { display: block; width: 100%; text-align: left; }
             .image-container img { max-width: 100px; }
+            #widget-parent { height: 600px; }
         }
     </style>
 </head>
 <body>
-<header style="background: #d886ec; border-bottom: 1px solid #eee;">
-    <a href="https://gigsberg.uk/">
-        <img src="https://gigsberg.uk/assets/front/images/logo3.png" alt="Gigsberg home" style="height:40px;">
-    </a>
-    <div style="margin-top:10px; color:#04599c; font-size:0.95em;">
-        Gigsberg is a secondary ticket marketplace. All tickets are guaranteed and secure. Prices are set by sellers and may be above or below face value.
-    </div>
-</header>
 <main>
     <section>
         <div class="thankyou-title">Thank you.</div>
         <div class="thankyou-subtitle">Your ticket purchase is now being processed.</div>
-        <div class="thankyou-message">We’ll get back to you soon.</div>
+        <div class="thankyou-message">We'll get back to you soon.</div>
         <div class="thank-you-widgets-left">
             <div class="purchase-title">
                 <h3>Purchase details for:</h3>
@@ -103,28 +125,25 @@
         </div>
         <div class="thank-you-block">
             <p>Find a place to stay near O2 Forum Kentish Town</p>
-            <button id="widget-button" style="color:#fff; background:#04599c; padding:8px 18px; border-radius:4px; text-decoration:none;">Search Hotels</button>
+            <div id="widget-parent"></div>
         </div>
     </section>
 </main>
 <script type="text/javascript" src="https://widget-test.travelone.ai/init.latest.js"></script>
 <script>
-    setTimeout(initWidget, 2000);
-    function initWidget() {
-        Dest1PhoenixWidget.configureWidget({
-            hostId: '61a8c0b0-3b7a-45c9-8ae8-9985075a6aa5',
-            buttonId: "widget-button",
-            customerInfo: {
-                destination: 'O2 Forum Kentish Town, London, United Kingdom',
-                name: 'John Doe',
-                travelers: '1 adult',
-                eventDate: 'Monday, 25 August, 2025',
-                eventType: 'event',
-                language: 'en',
-                currency: 'GBP',
-            },
-        });
-    }
+    Dest1PhoenixWidget.configureWidget({
+        hostId: '21E5AFD3-E66D-480E-B102-CA9DD14F307F',
+        containerId: "widget-parent",
+        customerInfo: {
+            destination: 'O2 Forum Kentish Town, London, United Kingdom',
+            name: 'John Doe',
+            travelers: '1 adult',
+            eventDate: 'Monday, 25 August, 2025',
+            eventType: 'event',
+            language: 'en',
+            currency: 'GBP',
+        }
+    });
 </script>
 </body>
 </html>
