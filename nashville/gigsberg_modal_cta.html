@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Event Tickets Marketplace - D1 Technology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gigsberg is a secondary ticket marketplace. All tickets are guaranteed and secure.">
+    <link rel="shortcut icon" href="https://gigsberg.uk/assets/front/images/favicon.ico">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
+        header, main { max-width: 700px; margin: 30px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 24px; }
+        .thankyou-title { font-size: 2em; font-weight: bold; margin-bottom: 0.2em; }
+        .thankyou-subtitle { font-size: 1.2em; margin-bottom: 0.5em; }
+        .thankyou-message { color: #666; margin-bottom: 1.5em; }
+        .purchase-title h3 { margin: 0.2em 0; }
+        .order-details, .date-location, .customer-details { display: flex; gap: 32px; margin-bottom: 1em; }
+        .order-details ul, .customer-details ul { list-style: none; padding: 0; margin: 0; }
+        .order_div_left { color: #888; }
+        .order_div_right { font-weight: bold; }
+        .separator { border: none; border-top: 1px solid #eee; margin: 1.5em 0; }
+        .thank-you-widgets-left, .thank-you-widgets-right { display: inline-block; vertical-align: top; }
+        .thank-you-widgets-left { width: 60%; }
+        .thank-you-widgets-right { width: 35%; text-align: right; }
+        .image-container img { max-width: 120px; border-radius: 8px; }
+        .date-location { gap: 48px; }
+        .date-section, .location-section { }
+        .label { font-size: 0.95em; color: #888; }
+        .value { font-weight: bold; }
+        .tysecurity { background: #f0f8ff; padding: 12px; border-radius: 6px; color: #04599c; margin-bottom: 1em; }
+        .thank-you-block { background: #f9f9f9; padding: 12px; border-radius: 6px; text-align: center; }
+        @media (max-width: 700px) {
+            header, main { padding: 12px; }
+            .order-details, .date-location, .customer-details { flex-direction: column; gap: 8px; }
+            .thank-you-widgets-left, .thank-you-widgets-right { display: block; width: 100%; text-align: left; }
+            .image-container img { max-width: 100px; }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+        <div class="thankyou-title">Thank you.</div>
+        <div class="thankyou-subtitle">Your ticket purchase is now being processed.</div>
+        <div class="thankyou-message">We’ll get back to you soon.</div>
+        <div class="thank-you-widgets-left">
+            <div class="purchase-title">
+                <h3>Purchase details for:</h3>
+                <h3>WTC 25</h3>
+            </div>
+            <div class="order-details">
+                <ul class="order_div_left">
+                    <li>Order ID</li>
+                    <li>Ticket Type</li>
+                    <li>Category</li>
+                </ul>
+                <ul class="order_div_right">
+                    <li>#4792869</li>
+                    <li>Mobile Ticket</li>
+                    <li>Stalls</li>
+                </ul>
+            </div>
+        </div>
+        <div class="thank-you-widgets-right">
+            <div class="image-container">
+                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHeN_I-B04Q1A/company-logo_100_100/company-logo_100_100/0/1683624658380/d1_technology_logo?e=1755734400&v=beta&t=EKOuq152XHdddKU668VnGlJiCAEMX2B13NOVd4V05Lc" alt="Suki Waterhouse">
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="date-location">
+            <div class="date-section">
+                <div class="label">Date</div>
+                <div class="value">Tuesday, 22 July, 2025</div>
+            </div>
+            <div class="location-section">
+                <div class="label">Location</div>
+                <div class="value">Omni Hotel, Nashville, USA</div>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="customer-details">
+            <div>
+                <h3 class="customer-details-title">Customer details</h3>
+                <ul>
+                    <li>Kevin Kirk</li>
+                    <li>+46-708191303</li>
+                    <li>kevin.kirk@d1techs.com</li>
+                    <li>Storagatan 38</li>
+                    <li>Vastaros, Sweden</li>
+                </ul>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="tysecurity">
+            To keep our marketplace safe for everybody, D1 Technology is reviewing this order and will notify you as soon as your ticket is available for download.
+        </div>
+        <div class="thank-you-block">
+            <p>Find a place to stay near Omni Hotel in Nashville</p>
+            <button id="widget-button" style="color:#fff; background:#04599c; padding:8px 18px; border-radius:4px; text-decoration:none; visibility: hidden;">Search Hotels</button>
+        </div>
+    </section>
+</main>
+<!-- Sticky Accommodation CTA -->
+<a id="sticky-accommodation-cta" href="#"
+   style="position:fixed;bottom:32px;right:32px;z-index:9999;display:flex;align-items:center;gap:12px;
+          background:#04599c;color:#fff;font-size:1.15em;font-weight:bold;padding:18px 28px 18px 20px;
+          border-radius:40px;box-shadow:0 4px 24px #04599c44;transition:transform 0.2s;
+          text-decoration:none;cursor:pointer;animation:bounce 1.5s infinite;">
+    <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+        <path fill="#fff" d="M12 3l9 6v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9l9-6zm0 2.18L5 9.05V20h14V9.05l-7-3.87z"/>
+        <circle cx="12" cy="16" r="2" fill="#fff"/>
+    </svg>
+    <span>Book Accommodation Near the Event</span>
+</a>
+<style>
+    @media (max-width: 600px) {
+        #sticky-accommodation-cta {
+            right: 12px !important;
+            left: 12px !important;
+            bottom: 12px !important;
+            width: auto !important;
+            border-radius: 30px !important;
+            font-size: 1em !important;
+            padding: 14px 12px !important;
+        }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0);}
+        20% { transform: translateY(-8px);}
+        40% { transform: translateY(0);}
+        60% { transform: translateY(-4px);}
+        80% { transform: translateY(0);}
+    }
+</style>
+<script>
+    // When clicked, trigger the hotel widget button
+    document.getElementById('sticky-accommodation-cta').onclick = function(e) {
+        e.preventDefault();
+        // Scroll to the hotel widget button and click it
+        var btn = document.getElementById('widget-button');
+        if(btn) {
+            btn.click();
+            btn.focus();
+            btn.style.boxShadow = "0 0 0 4px #04599c55";
+            setTimeout(()=>btn.style.boxShadow="", 1200);
+        }
+    };
+</script>
+<script type="text/javascript" src="https://widget-test.travelone.ai/init.latest.js"></script>
+<script>
+        Dest1PhoenixWidget.init({
+            hostId: '61a8c0b0-3b7a-45c9-8ae8-9985075a6aa5',
+            buttonId: "widget-button",
+            customerInfo: {
+                destination: 'Omni Hotel, Nashville, USA',
+                name: 'Kevin Kirk',
+                travelers: '1 adult',
+                eventDate: 'Tuesday, 26 July, 2025',
+                eventType: 'event',
+                language: 'en',
+                currency: 'USD'
+            }
+    });
+</script>
+</body>
+</html>
